@@ -57,11 +57,14 @@ export class UserUpdateComponent {
   
       updateUser(){
         let id = Number(this.formulario.controls.id.value);
+
+        console.log(id);
         this.newUser.id = id;
         this.newUser.name = String(this.formulario.controls.name.value);
         this.newUser.lastname = String(this.formulario.controls.lastname.value);
+        
   
-        this.http.put("http://localhost:8080/api/user/${id}", this.newUser).subscribe(resultado =>{
+        this.http.put(`http://localhost:8080/api/user/${id}`, this.newUser).subscribe(resultado =>{
           console.log(resultado);
           this.showAlert("success","se actulizo correctamente");
         });
