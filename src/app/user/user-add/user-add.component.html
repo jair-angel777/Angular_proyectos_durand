@@ -1,0 +1,16 @@
+<form class="form-control" [formGroup]="formulario">
+
+    <h3>Agregar nuevo Usuario</h3>
+    <label for="" class="form-label">Id</label>
+    <input type="number" class="form-control" formControlName="id">
+
+    <label for="" class="form-label">Name</label>
+    <input type="text" class="form-control" formControlName="name">
+
+    <label for="" class="form-label">Lastname</label>
+    <input type="text" class="form-control" formControlName="lastname">
+
+    <button (click)="addNewUser(); addAlert('success','ingresado correctamente')">Guardar Usuario</button>
+
+
+</form>

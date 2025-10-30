@@ -1,0 +1,30 @@
+<p>user-list works!</p>
+
+<h3 class="titulo">tabla de Usuario</h3>
+<a href="http://localhost:4200/user/add">
+  <button>añadir Usuario</button>
+</a>
+<button (click)="showAlert()">Eliminar usuario</button>
+<hr>
+<table border="2" class="table table-bordered">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Lastname</th>
+    <th>Acciones</th>
+  </tr>
+  @for (user of users; track user.id){
+  <tr>
+    <td>{{ user.id }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.lastname }}</td>
+    <td>
+      <a href="/user/update/{{ user.id }}"> Editar</a>
+      <a href="">Eliminar</a>
+
+    </td>
+  </tr>
+  } @empty {
+
+  }
+</table>
